@@ -73,7 +73,7 @@ public class Menu {
     private void enterGame(Game game) {
 
         Stage stage = new Stage();
-        stage.setOnCloseRequest(e-> {
+        stage.setOnCloseRequest(e -> {
             game.pauseGame();
             Main.enterMenu(new Stage());
         });
@@ -99,6 +99,9 @@ public class Menu {
     private Game loadGame() throws IOException {
 
         File data = new File("data.txt");
+        if (!data.isFile()) {
+            data.createNewFile();
+        }
 
         ArrayList<Hero> heroes = new ArrayList<>();
         Castle CASTLE_ONE = null;
