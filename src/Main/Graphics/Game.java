@@ -183,8 +183,9 @@ public class Game {
         save.setOnAction(saveEvent -> new Thread(() -> {
             try {
                 saveGame();
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
+                Platform.runLater(() -> new Alert(Alert.AlertType.INFORMATION, "Game saved").show());
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
         }).start());
 
