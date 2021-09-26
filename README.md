@@ -1,3 +1,2 @@
-Battle of the Heroes
-Ali Ebrahimi
+# The Battle of the Heroes
 The final project of AP
